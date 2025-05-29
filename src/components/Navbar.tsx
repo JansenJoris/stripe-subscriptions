@@ -20,12 +20,16 @@ const routeList: RouteProps[] = [
 		label: "Home",
 	},
 	{
-		href: "#team",
-		label: "Team",
+		href: "#werknemers",
+		label: "Werknemers",
 	},
 	{
-		href: "#testimonials",
-		label: "Testimonials",
+		href: "#werkgevers",
+		label: "Werkgevers",
+	},
+	{
+		href: "#flexi-news",
+		label: "Flexi News",
 	},
 ];
 
@@ -50,7 +54,7 @@ export const Navbar = () => {
 					<NavigationMenuItem className='font-bold md:flex hidden'>
 						<a rel='noreferrer noopener' href='/' className='ml-2 font-bold text-xl flex'>
 							<span className='uppercase bg-gradient-to-r from-[#667EEA] to-[#764BA2] text-transparent bg-clip-text'>
-								🚀 Next Stripe
+								👨🏾‍🍳 Flexi-Jobs.nu
 							</span>
 						</a>
 					</NavigationMenuItem>
@@ -77,7 +81,7 @@ export const Navbar = () => {
 									variant: "ghost",
 								})}`}
 							>
-								Billing Portal
+								Factuur Portaal
 							</Link>
 						)}
 					</nav>
