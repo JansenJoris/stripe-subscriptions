@@ -31,9 +31,9 @@ interface PricingProps {
 
 const pricingList: PricingProps[] = [
   {
-    title: 'Starter',
+    title: 'Gratis',
     popular: 0,
-    price: 12,
+    price: 0,
     description:
       'Voor kleine ondernemingen die sporadis nieuw personeel aanwerft',
     buttonText: 'Adverteer',
@@ -42,9 +42,9 @@ const pricingList: PricingProps[] = [
     billing: '/starter',
   },
   {
-    title: 'Premium',
+    title: 'Starter',
     popular: 1,
-    price: 32,
+    price: 10,
     description:
       'Voor de Kmo die regelmatig Flexers nodig heeft. Max 1 vacature online per onderneming. Vacature kan je aanpassen aan uw noden.',
     buttonText: 'Adverteer',
@@ -60,9 +60,9 @@ const pricingList: PricingProps[] = [
     billing: '/month',
   },
   {
-    title: 'VIP',
+    title: 'Vip',
     popular: 0,
-    price: 240,
+    price: 99,
     description:
       'Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.',
     buttonText: 'Adverteer',

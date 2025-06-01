@@ -8,8 +8,8 @@ datasource db {
 }
 
 enum Plan {
-  free
-  premium
+  Gratis
+  Starter
 }
 
 enum SubscriptionPeriod {
