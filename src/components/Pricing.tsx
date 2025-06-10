@@ -39,9 +39,9 @@ const pricingList: PricingProps[] = [
     buttonText: 'Adverteer',
     benefitList: ['1 Vacature', '30 dagen actief', 'Opname Nieuwsbrief'],
     href: '/api/auth/login',
-    billing: '/starter',
+    billing: '',
   },
-  {
+  /* {
     title: 'Starter',
     popular: 1,
     price: 10,
@@ -57,26 +57,25 @@ const pricingList: PricingProps[] = [
     ],
     href: '/api/auth/login',
     paymentLink: process.env.STRIPE_MONTHLY_PLAN_LINK,
-    billing: '/month',
-  },
+    billing: '/maand',
+  }, */
   {
     title: 'Vip',
     popular: 0,
     price: 99,
-    description:
-      'Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.',
+    description: 'Ideaal voor de grotere KMO & Interims',
     buttonText: 'Adverteer',
     benefitList: [
       '1 Account',
-      'Onbeperkt Vacatures',
-      'Onbeperkte tijd online',
+      'Onbeperkt aantal Vacatures',
+      '24/7 - 365 online',
       'Online Nieuwsbrief',
       'Instagram',
       'Facebook',
     ],
     href: '/api/auth/login',
     paymentLink: process.env.STRIPE_YEARLY_PLAN_LINK,
-    billing: '/year',
+    billing: '/jaar',
   },
 ];
 
@@ -89,61 +88,61 @@ export const Pricing = () => {
           {' '}
           Onbeperkt{' '}
         </span>
-        op Flexi-Job.nu
+        op Flexi-Jobs.nu
       </h2>
       <h3 className='text-xl text-center text-muted-foreground pt-4 pb-8'></h3>
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
-        {pricingList.map((pricing: PricingProps) => (
-          <Card
-            key={pricing.title}
-            className={
-              pricing.popular === PopularPlanType.YES
-                ? 'drop-shadow-xl shadow-black/10 dark:shadow-white/10'
-                : ''
-            }
-          >
-            <CardHeader>
-              <CardTitle className='flex item-center justify-between'>
-                {pricing.title}
-                {pricing.popular === PopularPlanType.YES ? (
-                  <Badge variant='secondary' className='text-sm text-primary'>
-                    Meest gekozen
-                  </Badge>
-                ) : null}
-              </CardTitle>
-              <div>
-                <span className='text-3xl font-bold'>€{pricing.price}</span>
-                <span className='text-muted-foreground'>
-                  {' '}
-                  {pricing.billing}
-                </span>
-              </div>
-
-              <CardDescription>{pricing.description}</CardDescription>
-            </CardHeader>
-
-            <CardContent>
-              <PaymentLink
-                href={pricing.href}
-                text={pricing.buttonText}
-                paymentLink={pricing.paymentLink}
-              />
-            </CardContent>
-
-            <hr className='w-4/5 m-auto mb-4' />
-
-            <CardFooter className='flex'>
-              <div className='space-y-4'>
-                {pricing.benefitList.map((benefit: string) => (
-                  <span key={benefit} className='flex'>
-                    <Check className='text-purple-500' />{' '}
-                    <h3 className='ml-2'>{benefit}</h3>
+      <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-8'>
+          {pricingList.map((pricing: PricingProps) => (
+            <Card
+              key={pricing.title}
+              className={
+                pricing.popular === PopularPlanType.YES
+                  ? 'drop-shadow-xl shadow-black/10 dark:shadow-white/10'
+                  : ''
+              }
+            >
+              <CardHeader>
+                <CardTitle className='flex item-center justify-between'>
+                  {pricing.title}
+                  {pricing.popular === PopularPlanType.YES ? (
+                    <Badge variant='secondary' className='text-sm text-primary'>
+                      Meest gekozen
+                    </Badge>
+                  ) : null}
+                </CardTitle>
+                <div>
+                  <span className='text-3xl font-bold'>€{pricing.price}</span>
+                  <span className='text-muted-foreground'>
+                    {' '}
+                    {pricing.billing}
                   </span>
-                ))}
-              </div>
-            </CardFooter>
-          </Card>
-        ))}
+                </div>
+
+                <CardDescription>{pricing.description}</CardDescription>
+              </CardHeader>
+
+              <CardContent>
+                <PaymentLink
+                  href={pricing.href}
+                  text={pricing.buttonText}
+                  paymentLink={pricing.paymentLink}
+                />
+              </CardContent>
+
+              <hr className='w-4/5 m-auto mb-4' />
+
+              <CardFooter className='flex'>
+                <div className='space-y-4'>
+                  {pricing.benefitList.map((benefit: string) => (
+                    <span key={benefit} className='flex'>
+                      <Check className='text-purple-500' />{' '}
+                      <h3 className='ml-2'>{benefit}</h3>
+                    </span>
+                  ))}
+                </div>
+              </CardFooter>
+            </Card>
+          ))}
       </div>
     </section>
   );

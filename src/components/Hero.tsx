@@ -26,7 +26,7 @@ export const Hero = () => {
 					</a> */}
 
           <p className='text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0 text-balance'>
-            Vindt vlot een flexi-job in je buurt
+            snel een flexi-job in je buurt
           </p>
 
           <div className='space-y-4 md:space-y-0 md:space-x-4'>
